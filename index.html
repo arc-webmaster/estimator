@@ -1,0 +1,73 @@
+
+<html>
+<head>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<form id="msform">
+  <!-- fieldsets -->
+  <fieldset>
+    <h2 class="fs-title">Job Information</h2>
+    <input type="text" name="salesname" id="salesname" placeholder="Sales Representive Name" />
+    <input type="text" name="customername" id="customername" placeholder="Customer Name" />
+    <input type="text" name="jobdesc" id="jobdesc" placeholder="Job Description" />
+    <input type="text" name="cdnum" id="cdnum" class="forcenumeric" placeholder="CD Number" /><div id="helpcdnum" class="help"></div><p id="ttcdnum" class="tooltip"></p>
+    <input type="text" name="size" id="size" class="forcenumeric" placeholder="Finished Sleeve Size" /><div id="helpsize" class="help"></div><p id="ttsize" class="tooltip"></p>
+    <input type="text" name="repeat" id="repeat" class="forcenumeric" placeholder="Exact Repeat" /><div id="helprepeat" class="help"></div><p id="ttrepeat" class="tooltip"></p>
+    <input type="text" name="numcolors" id="numcolors" class="forcenumeric" placeholder="Number of Colors" /><div id="helpnumcolors" class="help"></div><p id="ttnumcolors" class="tooltip"></p>
+    <ul id="radios">
+      <p class="fs-subtitle">Print Location:</p>
+      <li><label><input type="radio" name="printloc" value="WRS" checked="checked"> WRS</li></label>
+      <li><label><input type="radio" name="printloc" value="PPC Flex"> PPC Flex</li></label>
+      <li><label><input type="radio" name="printloc" value="Other"> Other</li></label>
+    </ul>
+    <ul id="radios">
+      <p class="fs-subtitle">Print Layout:</p>
+      <li><label><input type="radio" name="printlayout" value="1 Side Position Print"> 1 Side Position</li></label>
+      <li><label><input type="radio" name="printlayout" value="2 Side Position Print" checked="checked"> 2 Side Position</li></label>
+      <li><label><input type="radio" name="printlayout" value="Random Print"> Random Print</li></label>
+    </ul>
+    <input type="button" name="next" class="next action-button" value="Next" />
+  </fieldset>
+  
+  <fieldset>
+    <h2 class="fs-title">Plate Information</h2>
+    <h3 class="fs-subtitle">Enter width and height for each plate. Use QTY for swing color or additional varities.</h3>
+    <div class="platewrapper">
+    <div class="plate" id="platebox">
+      <ul class="platecolor">
+        <li><input type="text" name="platecolor" id="platecolor" placeholder="Plate Color" /></li>
+        <li class="quant"><input type="text" name="qty" id="qty" class="forcenumeric" placeholder="QTY" value="1"/></li>
+      </ul>
+      <ul class="wxh">
+        <li><input type="text" name="dimwidth" id="dimwidth" class="forcenumeric" placeholder="Width" /></li>
+        <li class="x"> X </li>
+        <li><input type="text" name="dimheight" id ="dimheight" class="forcenumeric" placeholder="Height" /></li>
+        <li class="removebtn"><input type="button" class="remove hidden" name="remove" value="Remove" /></li>  
+      </ul>
+    </div>
+    </div>
+
+    <input type="button" name="addplate" class="add" value="Add Plate" />
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="button" name="next" class="next action-button pulldata" value="Next" />
+  </fieldset>
+  
+  <fieldset>    
+    <p><span id="overview"></span></p>
+
+    <div id="range"></div>
+
+    <div class="breakdown"></div>
+    
+    <input type="button" name="previous" class="previous action-button" value="Previous" />
+    <input type="submit" name="email" class="email action-button" value="Email" />
+    <input type="submit" name="print" class="print action-button" value="Print" />
+  </fieldset>
+</form>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="calculator.js"></script>
+<script src="validator.js"></script>
+</html>
